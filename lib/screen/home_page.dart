@@ -141,12 +141,12 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           InkWell(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => CardScreen(),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CardScreen(dir: 1),
+                                ),
+                              );
                             },
                             child: MyContainer(
                               size: size,
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CardScreen(),
+                                  builder: (context) => CardScreen(dir: 2),
                                 ),
                               );
                             },

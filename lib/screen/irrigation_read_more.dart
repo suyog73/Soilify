@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:soil_doc/helpers/constants.dart';
+import 'package:soil_doc/screen/vegetables_description.dart';
 
 class IrrigationReadMore extends StatefulWidget {
   const IrrigationReadMore({Key? key, this.card = 1}) : super(key: key);
@@ -260,9 +261,33 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                   ? Column(
                       children: [
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'wheat'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'wheat',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "Wheat"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'watermelon'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'watermelon',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "Watermelon"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
                         MyImageContainer(size: size, name: 'sugarcane'),
                         SizedBox(height: 20),
@@ -375,10 +400,12 @@ class MyImageContainer extends StatelessWidget {
     Key? key,
     required this.size,
     required this.name,
+    this.onTap,
   }) : super(key: key);
 
   final Size size;
   final String name;
+  final Function? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -390,30 +417,35 @@ class MyImageContainer extends StatelessWidget {
       jpg = "png";
     }
 
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(),
-      ),
-      child: Row(
-        children: [
-          Image(
-            image: AssetImage("assets/images/$name.$jpg"),
-            width: size.width * 0.5,
-            fit: BoxFit.fitWidth,
-          ),
-          Expanded(
-            child: Container(
-              alignment: AlignmentDirectional.center,
-              child: Text(
-                name[0].toUpperCase() + name.substring(1),
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w600,
+    return InkWell(
+      onTap: () {
+        onTap!();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(),
+        ),
+        child: Row(
+          children: [
+            Image(
+              image: AssetImage("assets/images/$name.$jpg"),
+              width: size.width * 0.5,
+              fit: BoxFit.fitWidth,
+            ),
+            Expanded(
+              child: Container(
+                alignment: AlignmentDirectional.center,
+                child: Text(
+                  name[0].toUpperCase() + name.substring(1),
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
