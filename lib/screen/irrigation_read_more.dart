@@ -47,10 +47,6 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                       alignment: AlignmentDirectional.topStart,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        // border: Border.all(
-                        //   color: kGreenColorShade,
-                        //   width: 2,
-                        // ),
                       ),
                       // height: size.height * 0.3,
                       width: size.width,
@@ -110,7 +106,7 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           // 2)Drip irrigation
 
                           Text(
-                            "1) Sprinkler irrigation",
+                            "2) Drip irrigation",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -120,17 +116,17 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           Column(
                             children: [
                               Text(
-                                "- Sprinkler irrigation is similar to rainfall.",
+                                "- Drip irrigation can be defined as the method in which water drips slowly via a pipe system to the roots of the plants either from above or below the soil surface.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- In this type, water is pumped using a pipe system and then sprayed through sprinkler heads.",
+                                "-It is also known as micro-irrigation by which both water and soil nutrients can be saved.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- With Sprinkler Irrigation field areas irrespective of their sizes can be covered efficiently.",
+                                "- A set up of valves, tubes, pipes, and emitters is used for drip irrigation.",
                                 style: TextStyle(fontSize: 17),
                               ),
                             ],
@@ -147,7 +143,7 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           // 3) Surface irrigation
 
                           Text(
-                            "1) Sprinkler irrigation",
+                            "3) Surface irrigation",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -157,17 +153,17 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           Column(
                             children: [
                               Text(
-                                "- Sprinkler irrigation is similar to rainfall.",
+                                "- Surface irrigation has been practiced and followed for many years now.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- In this type, water is pumped using a pipe system and then sprayed through sprinkler heads.",
+                                "-It can be defined as a group of techniques where water is distributed over the surface of the soil gravity.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- With Sprinkler Irrigation field areas irrespective of their sizes can be covered efficiently.",
+                                "- In this type of irrigation, either the field is flooded (this is known as Basin Irrigation) or the water is fed into small channels (this is known as furrow irrigation).",
                                 style: TextStyle(fontSize: 17),
                               ),
                             ],
@@ -183,7 +179,7 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           // 4) Basin irrigation
 
                           Text(
-                            "1) Sprinkler irrigation",
+                            "4) Basin irrigation",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -193,17 +189,21 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           Column(
                             children: [
                               Text(
-                                "- Sprinkler irrigation is similar to rainfall.",
+                                "- Basin Irrigation method is primarily used for crops that stand in water for more extended periods, flat lands where rice is grown or in terraces on hillsides.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- In this type, water is pumped using a pipe system and then sprayed through sprinkler heads.",
+                                "- In Basin Irrigation flat areas of land are surrounded by low bunds. These bunds block the water and prevent it from entering the adjacent fields.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- With Sprinkler Irrigation field areas irrespective of their sizes can be covered efficiently.",
+                                "- Trees can also be grown using basin irrigation method.",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "- Basin irrigation is suitable pastures, citrus, banana and to some extent tobacco.",
                                 style: TextStyle(fontSize: 17),
                               ),
                             ],
@@ -220,7 +220,7 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           // 5) Furrow irrigation
 
                           Text(
-                            "1) Sprinkler irrigation",
+                            "5) Furrow irrigation",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -230,17 +230,21 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           Column(
                             children: [
                               Text(
-                                "- Sprinkler irrigation is similar to rainfall.",
+                                "- The application in which small channels carry water in between the crop rows and down the slope is known as Furrow irrigation.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- In this type, water is pumped using a pipe system and then sprayed through sprinkler heads.",
+                                "- Furrow irrigation is preferable to row crops and the ones that cannot thrive waterlogging.",
                                 style: TextStyle(fontSize: 17),
                               ),
                               // SizedBox(height: 5),
                               Text(
-                                "- With Sprinkler Irrigation field areas irrespective of their sizes can be covered efficiently.",
+                                "- Only maize, sunflower, sugarcane, and soyabean can be irrigated via furrow irrigation.",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "- While Tomatoes, Potatoes, Beans, Citrus and Grape would be damages if grown with Furrow Irrigation.",
                                 style: TextStyle(fontSize: 17),
                               ),
                             ],
@@ -289,43 +293,281 @@ class _IrrigationReadMoreState extends State<IrrigationReadMore> {
                           },
                         ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'sugarcane'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'sugarcane',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "sugarcane"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'strawberry'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'strawberry',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "strawberry"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'soyabean'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'soyabean',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "soyabean"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'red gram'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'red gram',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                    title: "Red Gram", id: 6),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'pineapple'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'pineapple',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "pineapple"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'papaya'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'papaya',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "papaya"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'sapota'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'sapota',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                  title: "sapota",
+                                  id: 9,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'mulberry'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'mulberry',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "mulberry"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'mango'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'mango',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                    title: "Mango", id: 11),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'maize'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'maize',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                  title: "maize",
+                                  id: 12,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'lemon'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'lemon',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                  title: "lemon",
+                                  id: 13,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'guava'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'guava',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "guava"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'groundnut-crop'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'groundnut',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                  title: "groundnut",
+                                  id: 15,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'green gram'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'green gram',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "green gram"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'grapes'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'grapes',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => VegetablesDescription(
+                                  title: "grapes",
+                                  id: 17,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'cotton'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'cotton',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "cotton"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'black gram'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'black gram',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "black gram"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'banana'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'banana',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "banana"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
-                        MyImageContainer(size: size, name: 'apples'),
+                        MyImageContainer(
+                          size: size,
+                          name: 'apples',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    VegetablesDescription(title: "apples"),
+                              ),
+                            );
+                          },
+                        ),
                         SizedBox(height: 20),
                       ],
                     )
