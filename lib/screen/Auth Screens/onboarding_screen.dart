@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:soil_doc/helpers/constants.dart';
 import 'package:soil_doc/screen/Auth%20Screens/login_screen.dart';

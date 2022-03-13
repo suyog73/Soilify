@@ -88,7 +88,7 @@ class _LoginScreen extends State<LoginScreen>
         height: size.height,
         decoration: BoxDecoration(
           color: kGreenColorShade.withOpacity(0.3),
-          gradient: kLinearGradient,
+          // gradient: kLinearGradient,
         ),
         child: ModalProgressHUD(
           inAsyncCall: showSpinner,
@@ -109,11 +109,11 @@ class _LoginScreen extends State<LoginScreen>
                             height: size.height * 0.1,
                             width: size.width,
                             child: Text(
-                              'Soil Doc',
+                              'Soilify',
                               style: TextStyle(
                                 fontSize: 48,
                                 fontWeight: FontWeight.bold,
-                                color: kGreenColorShade.withOpacity(0.7),
+                                color: Colors.redAccent,
                               ),
                             ),
                           ),
@@ -183,6 +183,7 @@ class _LoginScreen extends State<LoginScreen>
                                   },
                                   textInputAction: TextInputAction.done,
                                   validator: requiredValidator,
+                                  isPassword: true,
                                 ),
                                 buttons(
                                   'LOGIN',

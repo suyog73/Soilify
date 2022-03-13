@@ -89,7 +89,7 @@ class _SignupScreenState extends State<SignupScreen>
       body: Container(
         decoration: BoxDecoration(
           color: kGreenColorShade.withOpacity(0.3),
-          gradient: kLinearGradient,
+          // gradient: kLinearGradient,
         ),
         child: ModalProgressHUD(
           inAsyncCall: showSpinner,
@@ -159,7 +159,7 @@ class _SignupScreenState extends State<SignupScreen>
                                 validator: emailValidator,
                               ),
                               MyInputField(
-                                textInputType: TextInputType.visiblePassword,
+                                textInputType: TextInputType.name,
                                 icon: Icons.location_city,
                                 hintText: 'City (e.g. Sangli)',
                                 controller: cityController,
@@ -182,6 +182,7 @@ class _SignupScreenState extends State<SignupScreen>
                                 },
                                 textInputAction: TextInputAction.next,
                                 validator: passwordValidator,
+                                isPassword: true,
                               ),
                               MyInputField(
                                 textInputType: TextInputType.visiblePassword,
@@ -199,6 +200,7 @@ class _SignupScreenState extends State<SignupScreen>
                                     return "Password and confirm password doesn't match";
                                   }
                                 },
+                                isPassword: true,
                               ),
                               SizedBox(height: 15),
                               buttons(

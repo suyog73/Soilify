@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:soil_doc/helpers/constants.dart';
 import 'package:soil_doc/screen/home_page.dart';
 import 'package:soil_doc/services/weather.dart';
 
@@ -38,10 +39,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ModalProgressHUD(
+        progressIndicator: CircularProgressIndicator(color: kGreenColorShade),
         inAsyncCall: true,
-        child: Container(
-          color: Colors.red,
-        ),
+        child: Container(color: Colors.white),
       ),
     );
   }

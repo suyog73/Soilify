@@ -7,9 +7,12 @@ import 'package:soil_doc/helpers/constants.dart';
 import 'package:soil_doc/models/user_models.dart';
 import 'package:soil_doc/screen/home_page.dart';
 import 'package:soil_doc/screen/loading.dart';
+import 'package:soil_doc/screen/welcome_screen.dart';
 
 class GetUserData extends StatelessWidget {
-  const GetUserData({Key? key}) : super(key: key);
+  const GetUserData({Key? key, this.id = -1}) : super(key: key);
+
+  final int id;
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +50,10 @@ class GetUserData extends StatelessWidget {
             UserModel.uid = data['uid'].toString();
             UserModel.city = data['city'].toString();
 
-            return LoadingScreen();
+            return WelcomeScreen();
           }
           return Center(
-            child: CircularProgressIndicator(
-              color: kGreenColorShade,
-            ),
+            child: CircularProgressIndicator(color: kGreenColorShade),
           );
         },
       ),

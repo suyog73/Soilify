@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:soil_doc/helpers/constants.dart';
 import 'package:soil_doc/screen/home_page.dart';
+import 'package:soil_doc/screen/loading.dart';
 
 User? user = FirebaseAuth.instance.currentUser;
 
@@ -24,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     Timer(
       Duration(seconds: 3, milliseconds: 500),
       () => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (BuildContext context) => HomePage()),
+        MaterialPageRoute(builder: (BuildContext context) => LoadingScreen()),
       ),
     );
   }

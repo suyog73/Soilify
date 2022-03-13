@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:soil_doc/helpers/constants.dart';
 import 'package:soil_doc/models/user_models.dart';
+import 'package:soil_doc/screen/Auth%20Screens/login_screen.dart';
+import 'package:soil_doc/screen/about_soilify.dart';
 import 'package:soil_doc/screen/card_screen.dart';
 import 'package:soil_doc/widget/my_bottom_container.dart';
 
@@ -86,6 +88,10 @@ class _HomePageState extends State<HomePage> {
               trailing: Icon(Icons.shield, color: kGreenColorShade),
               onTap: () {
                 Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutSoilify()),
+                );
               },
             ),
             Divider(),
@@ -100,6 +106,16 @@ class _HomePageState extends State<HomePage> {
             Divider(),
             SizedBox(height: 20),
             InkWell(
+              onTap: () async {
+                await _auth.signOut();
+                print('signout');
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => LoginScreen(),
+                    ),
+                    (route) => false);
+              },
               child: Expanded(
                 child: Container(
                   alignment: AlignmentDirectional.center,
@@ -125,105 +141,134 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: kGreenColorShade,
         title: Text('Soilify'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
         children: [
-          SizedBox(height: 50),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Center(
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CardScreen(dir: 1),
-                                ),
-                              );
-                            },
-                            child: MyContainer(
-                              size: size,
-                              text: 'Soil',
-                              img: 'img44',
-                              dir: 1,
-                            ),
-                          ),
-                          SizedBox(width: 15),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CardScreen(dir: 2),
-                                ),
-                              );
-                            },
-                            child: MyContainer(
-                              size: size,
-                              text: 'Irrigation',
-                              img: 'img22',
-                              dir: 2,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          MyContainer(
-                            size: size,
-                            text: 'Crops',
-                            img: 'img33',
-                            dir: 3,
-                          ),
-                          SizedBox(width: 15),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CardScreen(dir: 4),
-                                ),
-                              );
-                            },
-                            child: MyContainer(
-                              size: size,
-                              text: 'Fertilizers',
-                              img: 'img11',
-                              dir: 4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 50),
+              Expanded(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyBottomContainer(
-                      size: size,
-                      dir: 1,
-                      locationWeather: widget.locationWeather,
+                    Center(
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              CardScreen(dir: 1),
+                                        ),
+                                      );
+                                    },
+                                    child: MyContainer(
+                                      size: size,
+                                      text: 'Soil',
+                                      img: 'img44',
+                                      dir: 1,
+                                    ),
+                                  ),
+                                  SizedBox(width: 15),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              CardScreen(dir: 2),
+                                        ),
+                                      );
+                                    },
+                                    child: MyContainer(
+                                      size: size,
+                                      text: 'Irrigation',
+                                      img: 'img22',
+                                      dir: 2,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  MyContainer(
+                                    size: size,
+                                    text: 'Crops',
+                                    img: 'img33',
+                                    dir: 3,
+                                  ),
+                                  SizedBox(width: 15),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              CardScreen(dir: 4),
+                                        ),
+                                      );
+                                    },
+                                    child: MyContainer(
+                                      size: size,
+                                      text: 'Fertilizers',
+                                      img: 'img11',
+                                      dir: 4,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Positioned(
+                              child: Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(300),
+                            ),
+                          )),
+                        ],
+                      ),
                     ),
-                    MyBottomContainer(
-                      locationWeather: widget.locationWeather,
-                      size: size,
-                      dir: 2,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyBottomContainer(
+                          size: size,
+                          dir: 1,
+                          locationWeather: widget.locationWeather,
+                        ),
+                        MyBottomContainer(
+                          locationWeather: widget.locationWeather,
+                          size: size,
+                          dir: 2,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+          Container(
+            width: 15,
+            height: size.height * 0.61,
+            decoration: BoxDecoration(
+              color: kGreenColorShade.withOpacity(0.5),
+            ),
+          )
         ],
       ),
     );
