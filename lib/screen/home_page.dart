@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white70,
       drawer: Drawer(
         child: ListView(
           children: [
@@ -116,20 +116,18 @@ class _HomePageState extends State<HomePage> {
                     ),
                     (route) => false);
               },
-              child: Expanded(
-                child: Container(
-                  alignment: AlignmentDirectional.center,
-                  height: 50,
-                  width: 60,
-                  decoration: BoxDecoration(
-                    color: kGreenColorShade.withOpacity(0.5),
-                  ),
-                  child: Text(
-                    'LOGOUT',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
+              child: Container(
+                alignment: AlignmentDirectional.center,
+                height: 50,
+                width: 60,
+                decoration: BoxDecoration(
+                  color: kGreenColorShade.withOpacity(0.5),
+                ),
+                child: Text(
+                  'LOGOUT',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
                   ),
                 ),
               ),
