@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       drawer: Drawer(
         child: ListView(
           children: [

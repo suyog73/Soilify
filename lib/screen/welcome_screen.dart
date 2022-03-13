@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:soil_doc/helpers/constants.dart';
+import 'package:soil_doc/models/user_models.dart';
 import 'package:soil_doc/screen/home_page.dart';
 import 'package:soil_doc/screen/loading.dart';
 
@@ -40,9 +41,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Welcome, Suyog',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28.0),
+              child: Center(
+                child: Text(
+                  'Welcome, ${UserModel.name}',
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+                ),
+              ),
             ),
             SizedBox(height: 40),
             Container(
